@@ -1,0 +1,358 @@
+/*----------------------------------------*/
+/* Graph Page Styles
+/*----------------------------------------*/
+
+/* Стили для секции с графиком */
+.graph-section {
+    background: #191919;
+    padding: 60px 0;
+}
+
+.graph-section h4 {
+    font-family: Mokoto, 'Mokoto Glitch', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+/* Стили для формы */
+#inputForm {
+    background: #222222;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+#inputForm label {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#inputForm input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background: #393939;
+    border: 1px solid #707070;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+#inputForm #pneumaticForm input[type="number"]:focus {
+    border-color: #baa98f;
+    outline: none;
+}
+
+#inputForm button {
+    font-size: 16px;
+    color: #000000;
+    background: #baa98f;
+    border: none;
+    padding: 12px 30px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+#inputForm button:hover {
+    background: #a08f76;
+}
+
+/* Стили для графика */
+
+
+.chart-container {
+    background: #222222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Стили для осей графика */
+.chartjs-render-monitor {
+    color: #ffffff;
+}
+
+/* Стили для подписей осей */
+.chartjs-render-monitor .chartjs-grid-line {
+    stroke: #707070;
+}
+
+.chartjs-render-monitor .chartjs-tick {
+    color: #ffffff;
+}
+
+/* Стили для легенды */
+.chartjs-legend {
+    color: #ffffff;
+}
+
+
+/* Стили для блока с результатами */
+.calculation-results {
+    background: #222222;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.calculation-results h3 {
+    font-family: Mokoto, 'Mokoto Glitch', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.calculation-results p {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin-bottom: 10px;
+}
+
+.calculation-results strong {
+    color: #baa98f;
+    font-weight: 700;
+}
+
+/* Стили для секции с пневмоцилиндром */
+.pneumatic-section {
+    background: #191919;
+    padding: 60px 0;
+}
+
+.pneumatic-section h2 {
+    font-family: Mokoto, 'Mokoto Glitch', sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Стили для формы */
+#pneumaticForm {
+    background: #222222;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+#pneumaticForm {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#pneumaticForm input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background: #393939;
+    border: 1px solid #707070;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+#pneumaticForm #pneumaticForm input[type="number"]:focus {
+    border-color: #baa98f;
+    outline: none;
+}
+
+#pneumaticForm button {
+    font-size: 16px;
+    color: #000000;
+    background: #baa98f;
+    border: none;
+    padding: 12px 30px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+#pneumaticForm button:hover {
+    background: #a08f76;
+}
+
+
+
+/* Контейнер с описанием */
+.info-container {
+    background: #222222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.info-container h3 {
+    font-family: Mokoto, 'Mokoto Glitch', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.info-container p {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin-bottom: 15px;
+}
+
+.info-container ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.info-container ul li {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin-bottom: 5px;
+}
+
+.info-container strong {
+    color: #baa98f;
+    font-weight: 700;
+}
+
+
+#rankingSection {
+    background: #191919; /* Основной фон секции */
+    padding: 60px 0; /* Отступы сверху и снизу */
+}
+
+#rankingSection h2 {
+    font-family: 'Mokoto', 'Mokoto Glitch', sans-serif;
+    font-size: 60px;
+    font-weight: 200;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+/* Стили для таблицы */
+#rankingTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background: #222222; /* Фон таблицы */
+    border-radius: 8px; /* Скругление углов */
+    overflow: hidden; /* Скрываем выходящие за пределы элементы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень */
+    display: block; /* Блочное отображение для прокрутки */
+    overflow-x: auto;
+}
+
+#rankingTable th,
+#rankingTable td {
+    padding: 16px;
+    text-align: center;
+    border-bottom: 1px solid #191919; /* Разделительные линии */
+    color: #b3b3b3;; /* Цвет текста */
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 10px;
+}
+
+#rankingTable th {
+    background: #222222; /* Цвет заголовков */
+    color: #ffffff;; /* Цвет текста в заголовках */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#rankingTable th:hover {
+    background: #baa98f; /* Цвет при наведении на заголовок */
+}
+
+#rankingTable tbody tr {
+    transition: background 0.3s ease;
+}
+
+#rankingTable tbody tr:hover {
+    background: #2a2a2a; /* Цвет при наведении на строку */
+}
+
+#rankingTable tbody tr:nth-child(even) {
+    background: #1f1f1f; /* Чередующийся фон строк */
+}
+
+/* Запретить выделение текста в таблице */
+#rankingTable {
+    user-select: none; /* Стандартное свойство */
+    -webkit-user-select: none; /* Для старых версий Chrome и Safari */
+    -moz-user-select: none; /* Для Firefox */
+    -ms-user-select: none; /* Для IE10+ */
+}
+
+/* Опционально: если нужно запретить выделение заголовков тоже */
+#rankingSection {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Медиа-запросы для адаптивности */
+@media only screen and (max-width: 767px) {
+    .graph-section h1 {
+        font-size: 36px;
+    }
+
+    .video .section-title h2 {
+        font-size: 36px;
+    }
+
+    #inputForm {
+        padding: 20px;
+    }
+
+    #inputForm input[type="number"] {
+        font-size: 14px;
+    }
+
+    #inputForm button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    #myChart {
+        padding: 10px;
+    }
+
+     #rankingSection h2 {
+        font-size: 40px; /* Уменьшаем размер заголовка */
+    }
+
+    #rankingTable {
+        min-width: 100%; /* Таблица занимает всю ширину экрана */
+        display: block; /* Блочное отображение для прокрутки */
+        overflow-x: auto; /* Горизонтальная прокрутка */
+    }
+
+    #rankingTable th,
+    #rankingTable td {
+        padding: 12px; /* Уменьшаем отступы */
+        font-size: 14px; /* Уменьшаем размер текста */
+        white-space: nowrap; /* Запрещаем перенос текста */
+    }
+
+    #rankingTable th {
+        font-size: 12px; /* Уменьшаем размер текста в заголовках */
+    }
+
+
+}
