@@ -2,32 +2,201 @@
     font-family: 'Mokoto';
     src:
         local("Mokoto"),
-        url('../fonts/mokoto-regular.otf') format('opentype'); /* Формат OTF указывается как 'opentype' */
+        url('../fonts/mokoto-regular.otf') format('opentype');
+}
+
+/* --- АНИМАЦИИ И ЭФФЕКТЫ --- */
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(186, 169, 143, 0.7); }
+    50% { box-shadow: 0 0 20px rgba(186, 169, 143, 0.9); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes scaleOut {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(0.9); opacity: 0; }
+}
+
+@keyframes colorCycle {
+    0% { color: #baa98f; }
+    25% { color: #a08f7a; }
+    50% { color: #8a7a6a; }
+    75% { color: #a08f7a; }
+    100% { color: #baa98f; }
+}
+
+@keyframes shine {
+    to { background-position: 200% center; }
+}
+
+@keyframes borderGlow {
+    0%, 100% { border-color: #baa98f; }
+    50% { border-color: #a08f7a; }
+}
+
+@keyframes textGlow {
+    0%, 100% { text-shadow: 0 0 5px rgba(186, 169, 143, 0.7); }
+    50% { text-shadow: 0 0 15px rgba(186, 169, 143, 0.9), 0 0 25px rgba(186, 169, 143, 0.6); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes textShadowPulse {
+    0%, 100% { text-shadow: 0 0 10px rgba(186, 169, 143, 0.7); }
+    50% { text-shadow: 0 0 20px rgba(186, 169, 143, 0.9), 0 0 30px rgba(186, 169, 143, 0.5); }
+}
+
+@keyframes borderPulse {
+    0%, 100% { box-shadow: 0 0 0 2px #baa98f; }
+    50% { box-shadow: 0 0 0 4px rgba(186, 169, 143, 0.5); }
+}
+
+
+@keyframes buttonHoverEffect {
+    from { background-position: 0 0; }
+    to { background-position: -200px 0; }
+}
+
+@keyframes priceGlow {
+    0%, 100% { color: #00ff88; text-shadow: 0 0 5px rgba(0, 255, 136, 0.3); }
+    50% { color: #00cc6a; text-shadow: 0 0 10px rgba(0, 255, 136, 0.6); }
+}
+
+@keyframes markerPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes markerGlow {
+    0%, 100% { box-shadow: 0 0 5px rgba(186, 169, 143, 0.7); }
+    50% { box-shadow: 0 0 15px rgba(186, 169, 143, 0.9); }
+}
+
+@keyframes sliderHoverGlow {
+    0%, 100% { box-shadow: 0 0 0 rgba(186, 169, 143, 0); }
+    to { box-shadow: 0 0 10px rgba(186, 169, 143, 0.5); }
+}
+
+@keyframes sliderActiveGlow {
+    0%, 100% { box-shadow: 0 0 0 rgba(186, 169, 143, 0); }
+    to { box-shadow: 0 0 15px rgba(186, 169, 143, 0.7); }
+}
+
+@keyframes configOptionHover {
+    from { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+    to { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(186, 169, 143, 0.2); }
+}
+
+@keyframes configOptionSelected {
+    from { box-shadow: 0 0 0 2px rgba(186, 169, 143, 0); }
+    to { box-shadow: 0 0 0 2px #baa98f; }
+}
+
+@keyframes stepDotHover {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+@keyframes stepDotActive {
+    from { background-color: #444; }
+    to { background-color: #baa98f; }
+}
+
+@keyframes finalPriceHover {
+    from { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); }
+    to { box-shadow: 0 8px 30px rgba(186, 169, 143, 0.4); }
+}
+
+@keyframes finalPriceInnerHover {
+    from { background: #222; }
+    to { background: linear-gradient(135deg, #2c2c2c 0%, #1c1c1c 100%); }
+}
+
+@keyframes modalContentHover {
+    from { border-color: #baa98f; }
+    to { border-color: #a08f7a; }
+}
+
+@keyframes closeHover {
+    from { color: #aaa; }
+    to { color: #baa98f; }
+}
+
+@keyframes notificationHover {
+    from { transform: translateX(-50%) scale(1); }
+    to { transform: translateX(-50%) scale(1.05); }
 }
 
 .modelD-3d{
     border: 1px solid #baa98f;;
     border-radius: 8px;
+    animation: float 6s ease-in-out infinite;
 }
 
 .modelM-3d{
     border: 1px solid #baa98f;;
     border-radius: 8px;
+    animation: float 6s ease-in-out infinite;
 }
 
 #model-container {
     display: none; /* Скрываем 3D модель по умолчанию */
-}
-
-#modelD-static-image-container {
-    position: relative;
-    width: 100%;
-    height: 480px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #222222;
-    border-radius: 8px;
 }
 
 #modelM-static-image-container {
@@ -39,18 +208,22 @@
     align-items: center;
     background-color: #222222;
     border-radius: 8px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
 }
-
 
 #static-image {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    transition: opacity 0.3s ease-in-out; /* Добавлена анимация прозрачности */
 }
 
+#static-image.changing {
+    opacity: 0.5; /* Состояние во время смены изображения */
+}
 
 /*-----3d model modal start-----*/
-
 .view-3d-button {
     position: absolute;
     bottom: 20px;
@@ -62,11 +235,14 @@
     border-radius: 8px;
     font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    animation: pulse 2s infinite;
+    z-index: 5; /* Выше маркеров */
 }
 
 .view-3d-button:hover {
     background-color: #a08f7a;
+    box-shadow: 0 8px 25px rgba(186, 169, 143, 0.4);
 }
 
 /* Стили для нового модального окна с 3D моделью */
@@ -82,7 +258,6 @@
     background-color: rgba(0, 0, 0, 0.9);
 }
 
-
 .modal-3d-content {
     background-color: #111111;
     margin: 5% auto;
@@ -91,6 +266,8 @@
     width: 90%;
     max-width: 800px;
     position: relative;
+    border-radius: 10px;
+    animation: slideInUp 0.5s ease-out;
 }
 
 .close-3d-modal {
@@ -101,24 +278,22 @@
     font-weight: bold;
     color: #baa98f;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .close-3d-modal:hover,
 .close-3d-modal:focus {
     color: #a08f7a;
     text-decoration: none;
+    animation: bounce 0.5s;
 }
+
 #modal-model-container {
     width: 100%;
     height: 500px;
     background-color: #222222;
 }
-
-
 /*-----3d model modal end-----*/
-
-
-
 .modelD-breadcrumb-text h3 {
     font-family: Mokoto, 'Mokoto Glitch', sans-serif;
 	color: #5c5c5c;
@@ -128,11 +303,13 @@
 .modelD-text h2 {
   font-family: Mokoto, 'Mokoto Glitch', sans-serif;
   font-size: 30px;
+  animation: textGlow 3s infinite alternate;
 }
 
 .modelD-text a {
    color: #111111;
 }
+
 .modelD-text a:hover {
    color: #FFFFFF;
 }
@@ -153,6 +330,7 @@
 	letter-spacing: 0.05em;
 	color: #ffffff;
 	text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+    animation: textShadowPulse 4s infinite alternate;
 }
 
 .modelD-item {
@@ -195,18 +373,7 @@
     padding: 0px 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
 /* --- Стили для конфигуратора (исправленные и упрощенные) --- */
-
 /* Общие стили для конфигуратора */
 .configuration {
     background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
@@ -216,6 +383,8 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     margin-top: 30px;
     position: relative; /* Для позиционирования внутренних элементов */
+    animation: fadeIn 0.8s ease-out;
+    overflow: hidden; /* Чтобы анимации не выходили за границы */
 }
 
 .configuration h5 {
@@ -224,8 +393,9 @@
     margin-bottom: 30px;
     letter-spacing: 2px;
     text-align: center;
-    font-size: 16px
-    /* Убраны анимации и сложные эффекты */
+    font-size: 16px;
+    animation: colorCycle 5s infinite;
+    position: relative;
 }
 
 .configuration h5::after {
@@ -236,7 +406,8 @@
     transform: translateX(-50%);
     width: 150px;
     height: 2px;
-    background: #baa98f;
+    background: linear-gradient(90deg, transparent, #baa98f, transparent);
+    animation: gradientShift 3s infinite;
 }
 
 /* Индикатор шагов */
@@ -253,15 +424,62 @@
     border-radius: 50%;
     background-color: #444;
     border: 2px solid #666;
-    transition: all 0.3s ease; /* Упрощенная анимация */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    animation: pulse 3s infinite;
+}
+
+.step-dot:hover {
+    animation: stepDotHover 0.3s forwards;
 }
 
 .step-dot.active {
+    animation: stepDotActive 0.3s forwards, glow 2s infinite;
     background-color: #1a1a1a;
     border-color: #baa98f;
     box-shadow: 0 0 8px rgba(186, 169, 143, 0.7);
-    transform: scale(1.2); /* Небольшое увеличение */
+    transform: scale(1.2);
 }
+
+
+/* --- Начало стилей для визуальной подсказки --- */
+.step-1-prompt {
+    position: absolute;
+    top: 50%; /* Центрируем приблизительно по вертикали */
+    left: 50%; /* Центрируем приблизительно по горизонтали */
+    transform: translate(-50%, -50%); /* Точное центрирование */
+    font-size: 32px; /* Размер символа пальца */
+    color: #baa98f; /* Цвет, соответствующий премиальному стилю */
+    z-index: 5; /* Выше, чем основные элементы, но ниже модальных окон */
+    pointer-events: none; /* Не мешает кликам по опциям */
+    opacity: 0; /* Сначала скрыт */
+    /* Анимации */
+    animation: promptFadeIn 1s ease-out 0.5s forwards, promptWiggle 1.5s ease-in-out infinite 2s;
+}
+
+/* Анимация появления */
+@keyframes promptFadeIn {
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Анимация "покачивания" пальца */
+@keyframes promptWiggle {
+    0%, 100% { transform: translate(-50%, -50%) rotate(-10deg); }
+    50% { transform: translate(-50%, -50%) rotate(10deg); }
+}
+
+/* Анимация "нажатия" пальца */
+@keyframes promptTap {
+    0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(-10deg); }
+    50% { transform: translate(-50%, -50%) scale(0.8) rotate(-10deg); }
+}
+
+/* Класс для активации анимации "нажатия" */
+.step-1-prompt.tap {
+    animation: promptTap 0.3s ease-in-out, promptWiggle 1.5s ease-in-out infinite 0.3s;
+}
+/* --- Конец стилей для визуальной подсказки --- */
 
 /* Заголовки шагов */
 .config-step h6 {
@@ -273,6 +491,7 @@
     padding-bottom: 10px;
     font-size: 18px;
     text-align: center;
+    animation: slideInDown 0.5s ease-out;
 }
 
 .config-step h6::after {
@@ -283,7 +502,8 @@
     transform: translateX(-50%);
     width: 80px;
     height: 2px;
-    background: #baa98f;
+    background: linear-gradient(90deg, transparent, #baa98f, transparent);
+    animation: gradientShift 3s infinite;
 }
 
 /* Стили для вариантов конфигурации */
@@ -300,16 +520,16 @@
     border-radius: 10px;
     padding: 25px 15px;
     cursor: pointer;
-    transition: all 0.3s ease; /* Упрощенная анимация */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Упрощенная анимация */
     text-align: center;
     position: relative;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: slideInUp 0.4s ease-out;
 }
 
 .config-option:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(186, 169, 143, 0.2);
+   
     border-color: #baa98f;
 }
 
@@ -322,16 +542,15 @@
 .config-option input[type="radio"]:checked ~ p,
 .config-option input[type="checkbox"]:checked ~ p {
     color: #baa98f;
+    animation: colorCycle 3s infinite;
 }
 
 .config-option.selected {
+    animation: configOptionSelected 0.3s forwards;
     background: rgba(186, 169, 143, 0.1);
     border-color: #baa98f;
     box-shadow: 0 0 0 2px #baa98f;
-    /* Убрана сложная анимация pulse */
 }
-
-
 
 .icon-circle {
     width: 100px;
@@ -343,7 +562,7 @@
     justify-content: center;
     background: #222222;
     border: 2px solid transparent;
-    transition: all 0.3s ease;
+    
     position: relative;
     overflow: hidden;
 }
@@ -353,16 +572,13 @@
     max-height: 80%;
     object-fit: contain;
     filter: grayscale(30%); /* Небольшое обесцвечивание по умолчанию */
-    transition: all 0.3s ease;
+    transition: filter 0.3s ease; /* Плавный переход фильтра */
 }
 
-/* Эффект при наведении/выборе на изображение */
 .config-option:hover .icon-circle img,
-.config-option.selected .icon-circle img,
-.config-option input[type="radio"]:checked + .icon-circle img,
-.config-option input[type="checkbox"]:checked + .icon-circle img {
+.config-option.selected .icon-circle img {
     filter: grayscale(0%);
-    transform: scale(1.05); /* Небольшое увеличение */
+    animation: iconHoverGlow 0.3s forwards; /* Анимация при наведении/выборе */
 }
 
 .config-option p {
@@ -384,25 +600,29 @@
 
 .buy-button, .next-step, .prev-step {
     background: linear-gradient(135deg, #baa98f 0%, #a08f7a 100%);
+    background-size: 200% 100%;
     border: none;
     color: #000;
     font-weight: 700;
     padding: 12px 30px;
     border-radius: 8px; /* Возвращаем скругление 8px */
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, background-position 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
     box-shadow: 0 4px 15px rgba(186, 169, 143, 0.3);
     position: relative;
     overflow: hidden;
     font-size: 0.9rem;
+    animation: pulse 2s infinite;
 }
 
 .buy-button:hover, .next-step:hover, .prev-step:hover {
+    animation: none; /* Отключаем pulse на hover */
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(186, 169, 143, 0.4);
     color: #000;
+    background-position: 100% 0; /* Анимация градиента */
 }
 
 /* Эффект скользящего света на кнопках */
@@ -416,6 +636,7 @@
     background: rgba(255, 255, 255, 0.3);
     transform: rotate(25deg);
     transition: all 0.6s;
+    z-index: 1;
 }
 
 .buy-button:hover::after, .next-step:hover::after, .prev-step:hover::after {
@@ -426,32 +647,17 @@
     background: transparent;
     border: 1px solid #baa98f;
     color: #baa98f;
+    background-image: none; /* Убираем градиент для prev-step */
 }
 
 .prev-step:hover {
-    background: #FFFFFF
+    background: #baa98f;
+    color: #000;
 }
 
 /* Стили для иконок информации */
 .option-wrapper {
     position: relative;
-}
-
-.info-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #666;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 2;
-    font-size: 1.1rem;
-}
-
-.info-icon:hover {
-    color: #baa98f;
-    transform: scale(1.1);
-    text-shadow: 0 0 8px rgba(186, 169, 143, 0.5);
 }
 
 /* Стили для цены */
@@ -462,6 +668,7 @@
     font-size: 0.9rem;
     opacity: 0.9;
     text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+    animation: priceGlow 2s infinite alternate;
 }
 
 .price-note {
@@ -481,13 +688,22 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
+    animation: slideInUp 0.6s ease-out;
+    transition: box-shadow 0.3s ease;
 }
+
+
 
 .final-price-inner {
     background: #222;
     border-radius: 10px;
     padding: 25px;
     text-align: center;
+    transition: background 0.3s ease;
+}
+
+.final-price-display:hover .final-price-inner {
+    animation: finalPriceInnerHover 0.3s forwards;
 }
 
 .final-price {
@@ -495,7 +711,7 @@
     border: 1px solid #baa98f;
     border-radius: 8px;
     padding: 20px;
-    /* Убраны сложные эффекты */
+    animation: glow 3s infinite alternate;
 }
 
 .final-price .price-label {
@@ -504,6 +720,7 @@
     margin-bottom: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    animation: colorCycle 4s infinite;
 }
 
 .final-price .price-value h3 {
@@ -513,7 +730,7 @@
     font-family: 'Mokoto', 'Mokoto Glitch', sans-serif; /* Добавлен fallback */
     margin: 0;
     text-shadow: 0 0 10px rgba(186, 169, 143, 0.7);
-    /* Убрана сложная анимация мерцания */
+    animation: textShadowPulse 2s infinite alternate;
 }
 
 .price-divider {
@@ -521,6 +738,7 @@
     background: linear-gradient(to right, transparent, #baa98f, transparent);
     margin: 15px auto;
     width: 70%;
+    animation: gradientShift 3s infinite;
 }
 
 .final-price .price-note {
@@ -531,6 +749,23 @@
 }
 
 
+/* Стили для цен в строке заказа */
+.configuration-details .item-price {
+    color: #00cc6a; /* Яркий зелёный цвет для цены */
+    font-size: 0.85rem; /* Меньше размер шрифта */
+    font-weight: normal; /* Обычный (не жирный) шрифт */
+    opacity: 0.9; /* Немного прозрачности */
+    margin-left: 5px; /* Небольшой отступ слева от основного текста */
+    text-shadow: 0 0 2px rgba(0, 204, 106, 0.3); /* Лёгкая тень для выделения */
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .configuration-details .item-price {
+        font-size: 0.8rem; /* Ещё меньше на мобильных */
+        margin-left: 3px; /* Меньше отступ */
+    }
+}
 
 /* Стили для маркеров на изображении */
 /* Класс для активных маркеров */
@@ -555,10 +790,10 @@
     width: fit-content;
     z-index: 10;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    /* Убираем начальную невидимость и сложные анимации для простоты */
     opacity: 1;
     transform: none;
-    transition: opacity 0.3s ease, transform 0.3s ease, top 0.3s ease; /* Добавляем плавность для top */
+    transition: opacity 0.3s ease, transform 0.3s ease, top 0.3s ease;
+    animation: markerPulse 2s infinite alternate, markerGlow 3s infinite alternate;
 }
 
 /* Классы для позиционирования маркеров по вертикали */
@@ -584,9 +819,8 @@
 }
 
 .config-marker.soft-color-marker-position {
-    top: 200px; /* Примерно 40px ниже предыдущего */
+    top: 170px; /* Исправлено позиционирование */
 }
-/* Если маркеров больше - добавьте больше классов .xxx-marker-position с увеличивающимся top */
 
 /* Ползунок охвата талии */
 #waist-size-selector {
@@ -596,6 +830,7 @@
     margin-top: 20px;
     border: 1px solid #444;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: slideInUp 0.5s ease-out;
 }
 
 #waist-size-selector h6 {
@@ -603,6 +838,7 @@
     margin-bottom: 15px;
     text-align: center;
     font-size: 1.1rem;
+    animation: colorCycle 4s infinite;
 }
 
 #waistSizeSlider {
@@ -611,6 +847,16 @@
     border-radius: 5px;
     background: #333;
     outline: none;
+    width: 100%;
+    transition: box-shadow 0.3s ease;
+}
+
+#waistSizeSlider:hover {
+    animation: sliderHoverGlow 0.3s forwards;
+}
+
+#waistSizeSlider:active {
+    animation: sliderActiveGlow 0.3s forwards;
 }
 
 /* Стили для "большого пальца" ползунка */
@@ -651,6 +897,7 @@
     color: #baa98f;
     font-weight: bold;
     text-shadow: 0 0 5px rgba(186, 169, 143, 0.5);
+    animation: textGlow 2s infinite alternate;
 }
 
 /* Адаптация для мобильных устройств */
@@ -659,90 +906,72 @@
         padding: 25px 20px;
         margin-top: 25px;
     }
-    
     .configuration h5 {
         font-size: 1.5rem;
         margin-bottom: 25px;
     }
-    
     .steps-indicator {
         gap: 12px;
         margin-bottom: 25px;
     }
-    
     .step-dot {
         width: 13px;
         height: 13px;
     }
-    
     .config-step h6 {
         font-size: 1.2rem;
         margin-bottom: 20px;
     }
-    
     .config-options {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
     .config-option {
         padding: 20px 15px;
     }
-    
     .icon-circle {
         width: 90px;
         height: 90px;
     }
-    
     .final-price-display {
         margin: 25px 0;
     }
-    
     .final-price-inner {
         padding: 20px;
     }
-    
     .final-price {
         padding: 15px;
     }
-    
     .final-price .price-value h3 {
         font-size: 2.2rem;
     }
-    
     .buy-button, .next-step, .prev-step {
         padding: 12px 25px;
         font-size: 0.85rem;
         width: 100%;
         margin-bottom: 10px;
     }
-    
     .config-footer {
         flex-direction: column;
         gap: 15px;
         padding-top: 15px;
     }
-    
     .config-marker {
         font-size: 13px;
         padding: 4px 8px;
         top: 8px;
         left: 8px;
     }
-    
     #waist-size-selector {
         padding: 15px;
     }
-    
     #waistSizeSlider {
         height: 6px;
     }
-    
     #waistSizeSlider::-webkit-slider-thumb {
         width: 20px;
         height: 20px;
     }
-    
     #waistSizeSlider::-moz-range-thumb {
         width: 20px;
         height: 20px;
@@ -753,47 +982,37 @@
     .configuration {
         padding: 20px 15px;
     }
-    
     .configuration h5 {
         font-size: 1.3rem;
     }
-    
     .config-option {
         padding: 15px 10px;
     }
-    
     .icon-circle {
         width: 80px;
         height: 80px;
     }
-    
     .config-option p {
         font-size: 0.9rem;
     }
-    
     .final-price .price-value h3 {
         font-size: 2rem;
     }
-    
     .final-price .price-label {
         font-size: 1rem;
     }
-    
     .buy-button, .next-step, .prev-step {
         padding: 10px 20px;
         font-size: 0.8rem;
     }
 }
+
 /* --- Конец стилей конфигуратора --- */
-
-
-
-
 /* Стили для модального окна */
 .modal {
     display: none; /* Скрыто по умолчанию */
     position: fixed;
-    z-index: 1;
+    z-index: 1002; /* Выше 3D модального */
     left: 0;
     top: 0;
     width: 100%;
@@ -809,22 +1028,165 @@
     border: 1px solid #baa98f;
     width: 80%; /* Можно изменить ширину */
     max-width: 600px;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
 }
+
+
+/* --- Стили для модального окна (адаптивность) --- */
+
+/* Убедимся, что модальное окно корректно адаптируется */
+#orderModal .modal-content {
+  /* max-width: 95vw; - можно добавить, если нужно */
+  margin: 1rem auto; /* Отступы сверху/снизу */
+  /* height: auto; - по умолчанию */
+  max-height: 90vh; /* Максимальная высота 90% от высоты экрана */
+  overflow: auto; /* Добавляем общий скролл, если содержимое не помещается */
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+  border-radius: 10px;
+  border: 1px solid #333;
+  /* Убираем фиксированную ширину, чтобы оно адаптировалось */
+  width: auto; /* или width: 90%; для фиксированного % ширины */
+  max-width: 600px; /* Оставим максимальную ширину для десктопа */
+}
+
+/* Адаптивность для экранов шириной до 768px */
+@media (max-width: 768px) {
+  #orderModal .modal-content {
+    margin: 0.5rem auto; /* Уменьшаем внешние отступы */
+    width: 95%; /* Занимает почти всю ширину экрана */
+    max-height: 95vh; /* Увеличиваем максимальную высоту */
+  }
+
+  /* Уменьшаем размер шрифта для всего содержимого модального окна */
+  #orderModal .bd-text,
+  #orderModal .blog-author,
+  #orderModal .leave-comment,
+  #orderModal .configuration-details,
+  #orderModal .comment-form {
+    font-size: 0.9rem; /* Уменьшаем общий размер шрифта */
+  }
+
+  /* Уменьшаем размер шрифта для заголовков */
+  #orderModal h5,
+  #orderModal h2,
+  #orderModal h3 {
+    font-size: 1.2rem; /* Уменьшаем размер заголовков */
+  }
+
+  /* Уменьшаем размер шрифта для отображения конфигурации */
+  #orderModal #selected-configuration {
+    font-size: 0.85rem; /* Уменьшаем размер шрифта конфигурации */
+    line-height: 1.4; /* Улучшаем читаемость */
+  }
+
+  /* Уменьшаем внутренние отступы формы */
+  #orderModal .leave-comment {
+    padding: 0.75rem; /* Уменьшаем отступы */
+  }
+
+  /* Уменьшаем размер шрифта для полей ввода */
+  #orderModal input[type="text"],
+  #orderModal textarea {
+    font-size: 0.85rem; /* Уменьшаем размер шрифта в полях */
+    padding: 0.5rem 0.75rem; /* Внутренние отступы */
+  }
+
+  /* Уменьшаем размер шрифта для кнопки */
+  #orderModal .site-btn {
+    font-size: 0.9rem; /* Уменьшаем размер шрифта кнопки */
+    padding: 0.75rem 1rem; /* Внутренние отступы */
+  }
+
+  /* Убедимся, что поля ввода занимают всю ширину колонки */
+  #orderModal .comment-form .row > div {
+    padding-left: 0.5rem; /* Убираем или уменьшаем отступы от Bootstrap сетки, если нужно */
+    padding-right: 0.5rem;
+  }
+
+  #orderModal .comment-form input,
+  #orderModal .comment-form textarea {
+    width: 100%; /* Поля ввода занимают всю ширину */
+    box-sizing: border-box; /* Включаем padding и border в ширину */
+    /* Убираем text-overflow: ellipsis; - чтобы текст был виден целиком */
+    text-overflow: clip; /* Отменяем обрезание текста */
+    white-space: nowrap; /* Позволяем тексту прокручиваться внутри поля */
+    overflow: hidden; /* Скрываем переполнение */
+  }
+
+  /* При фокусе на поле ввода */
+  #orderModal .comment-form input:focus,
+  #orderModal .comment-form textarea:focus {
+    white-space: normal; /* Разрешаем перенос строк при фокусе для редактирования */
+    overflow: auto; /* Показываем прокрутку, если текст длинный */
+  }
+
+  /* Уменьшаем размер иконок соцсетей, если нужно */
+  #orderModal .bt-social a i {
+    font-size: 1.1rem; /* Уменьшаем размер иконок */
+  }
+}
+
+/* Общие стили для полей ввода в модальном окне */
+#orderModal input[type="text"],
+#orderModal textarea {
+  width: 100%; /* Занимают всю ширину родителя */
+  padding: 0.6rem 0.8rem; /* Внутренние отступы */
+  border: 1px solid #444; /* Граница поля */
+  border-radius: 4px; /* Скругление */
+  background-color: #333; /* Фон поля */
+  color: #dcdcdc; /* Цвет текста */
+  /* font-size уже задан через @media */
+  box-sizing: border-box; /* Включаем padding и border в ширину */
+  /* Убираем text-overflow: ellipsis; - чтобы текст был виден целиком */
+  text-overflow: clip; /* Отменяем обрезание текста */
+  white-space: nowrap; /* Позволяем тексту прокручиваться внутри поля */
+  overflow: hidden; /* Скрываем переполнение */
+}
+
+/* При фокусе на поле ввода */
+#orderModal input[type="text"]:focus,
+#orderModal textarea:focus {
+  outline: 1px solid #baa98f; /* Обводка при фокусе */
+  white-space: normal; /* Разрешаем перенос строк при фокусе для редактирования */
+  overflow: auto; /* Показываем прокрутку, если текст длинный */
+}
+
+/* Кнопка отправки */
+#orderModal .site-btn {
+  width: 100%; /* Кнопка занимает всю ширину */
+  padding: 0.8rem 1.2rem; /* Внутренние отступы */
+  font-size: 1rem; /* Размер шрифта кнопки */
+  background-color: #baa98f; /* Цвет фона кнопки */
+  border: none; /* Убираем границу */
+  border-radius: 4px; /* Скругление */
+  color: #111; /* Цвет текста кнопки */
+  cursor: pointer; /* Курсор указателя */
+  transition: background-color 0.3s ease; /* Плавный переход цвета */
+  margin-top: 1rem; /* Отступ сверху */
+}
+
+#orderModal .site-btn:hover {
+  background-color: #d4c7ad; /* Цвет фона кнопки при наведении */
+}
+
+/* --- Конец стилей для модального окна --- */
 
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    transition: color 0.3s ease;
+    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-    color: #baa98f;
+    animation: closeHover 0.3s forwards;
     text-decoration: none;
-    cursor: pointer;
 }
-
 
 /* Стили для уведомления */
 .notification {
@@ -837,9 +1199,9 @@
     padding: 10px 20px;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    z-index: 1003;
     opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease;
 }
 
 /* Стили для уведомления об ошибке */
@@ -853,13 +1215,14 @@
     color: black;
 }
 
-
 .hidden {
     opacity: 0;
     pointer-events: none;
 }
 
-
+.notification:hover {
+    animation: notificationHover 0.3s forwards;
+}
 
 /* Стили для маркеров на изображении */
 .markers-container {
@@ -883,50 +1246,32 @@
     width: fit-content;
 }
 
-
-
-
-
-
 /* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column; /* Логотип и текст друг под другом */
         text-align: center; /* Выравнивание текста по центру */
     }
-
     .footer-logo {
         margin-bottom: 15px; /* Отступ между логотипом и текстом */
     }
 }
 
-
 @media only screen and (max-width: 479px) {
-
     .modelD-text h2 {
         font-size: 20px;
     }
-
     .modelD-item th, .service-item td {
         padding: 4px;
         font-size: 12px;
     }
-
     .current-price p {
         font-size: 12px;
     }
-
     .buy-button{
         font-size: 12px;
       }
-
       .view-3d-button {
         font-size: 12px;
     }
-      
-
 }
-
-
-
-
