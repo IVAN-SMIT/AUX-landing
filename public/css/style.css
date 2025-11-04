@@ -805,6 +805,70 @@ ol {
 }
 
 
+/* --- Начало стилей для разделов описания --- */
+.config-descriptions-section{
+	background-color: #222222;
+}
+
+.config-desc-item {
+    margin-bottom: 40px; /* Отступ между разделами */
+}
+
+.config-desc-item h4 {
+    color: #baa98f; /* Цвет заголовка */
+    font-size: 1.4rem; /* Размер заголовка, возможно, чуть меньше */
+    margin-bottom: 10px; /* Отступ под заголовком */
+    font-weight: 600; /* Жирность */
+    font-family: 'Libre Franklin', sans-serif; /* Убедимся, что шрифт соответствует остальному тексту */
+}
+
+.config-desc-item p {
+    color: #dcdcdc; /* Цвет текста */
+    line-height: 1.7; /* Межстрочный интервал */
+    margin-bottom: 10px; /* Отступ между параграфами */
+    font-size: 1rem; /* Размер шрифта */
+	font-family: 'Libre Franklin', sans-serif; /* Шрифт */
+}
+
+.config-desc-item ul {
+    color: #dcdcdc; /* Цвет текста списка */
+	padding-left: 20px; /* Отступ слева для маркеров */
+    margin-bottom: 10px; /* Отступ под списком */
+}
+
+.config-desc-item ul li {
+    margin-bottom: 5px; /* Отступ между пунктами списка */
+    line-height: 1.6; /* Межстрочный интервал в списке */
+}
+
+/* Стили для изображений в описании */
+.desc-image {
+    max-width: 100%; /* Изображение не выходит за границы контейнера */
+    height: auto; /* Сохранение пропорций */
+    border-radius: 8px; /* Скругление углов изображения */
+    margin-top: 15px; /* Отступ сверху */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень для изображения */
+    display: block; /* Чтобы отступы работали корректно */
+}
+
+/* --- Стили для кнопки-ссылки на описание (уже могли быть добавлены ранее) --- */
+.desc-link {
+    color: #baa98f; /* Цвет ссылки */
+    text-decoration: underline; /* Подчеркивание */
+    cursor: pointer; /* Курсор указателя */
+    transition: color 0.3s ease; /* Плавный переход цвета */
+    font-weight: 500; /* Жирность */
+    font-size: 0.9rem; /* Размер шрифта чуть меньше основного */
+    margin-left: 5px; /* Маленький отступ от основного текста */
+}
+
+.desc-link:hover {
+    color: #d4c7ad; /* Цвет при наведении */
+    text-decoration: none; /* Убираем подчеркивание при наведении */
+}
+
+
+
 /*---------------------
   Counter Section
 -----------------------*/
@@ -2254,6 +2318,11 @@ ol {
 	}
 
 	.bd-text .bd-more-text .bm-item p {
+		font-size: 12px;
+		line-height: 18px;
+	}
+
+	.ul li {
 		font-size: 12px;
 		line-height: 18px;
 	}
