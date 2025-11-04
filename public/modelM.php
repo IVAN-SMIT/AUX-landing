@@ -71,7 +71,7 @@
                         </div>
                         <div id="modelM-static-image-container">
                             <img id="static-image" src="img/versions/9.webp" alt="Конфигурация не выбрана">
-                            <button id="view-3d-button" class="view-3d-button">Посмотреть в 3D</button>
+                            <!-- <button id="view-3d-button" class="view-3d-button">Посмотреть в 3D</button> -->
                         </div>
                     </div>
                 </div>
@@ -99,6 +99,7 @@
                         <!-- Конфигуратор -->
                         <div id="configurator" class="configuration mt-4">
                             <h5 class="mb-4">Настройте ваш экзоскелет</h5>
+                            <div id="step1Prompt" class="step-1-prompt">👉</div>
                             
                             <!-- Индикатор шагов -->
                             <div class="steps-indicator mb-4">
@@ -111,27 +112,27 @@
 
                             <!-- Этап 1: Со спиной / Без -->
                             <div class="config-step" data-step="1">
-                                <h6 class="mb-3">1/4 Выберите версию:</h6>
+                                <h6 class="mb-3">1/5 Выберите версию: <span class="desc-link" onclick="scrollToDescription('desc-spine')">[Что это?]</span></h6>
                                 <div class="row">
-                                    <div class="col-md-6 mb-3" data-price-category="BASE_VERSIONS" data-price-key="BASE">
+                                    <div class="col-6 mb-3" data-price-category="BASE_VERSIONS" data-price-key="BASE">
                                         <div class="option-wrapper position-relative">
                                             
                                             <label class="config-option d-flex flex-column align-items-center p-3 rounded">
                                                 <input type="radio" name="spine" value="base" data-parts="base" class="d-none">
                                                 <span class="icon-circle mb-2"><img src="img/versions/base.webp" alt="Базовая версия"></span>
                                                 <p class="mb-0 text-center">Базовая версия</p>
-                                                <div class="option-price" data-price-placeholder></div>
+                                                <!--div class="option-price" data-price-placeholder></div-->
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 mb-3" data-price-category="BASE_VERSIONS" data-price-key="WITH_SPINE">
+                                    <div class="col-6 mb-3" data-price-category="BASE_VERSIONS" data-price-key="WITH_SPINE">
                                         <div class="option-wrapper position-relative">
                                            
                                             <label class="config-option d-flex flex-column align-items-center p-3 rounded">
                                                 <input type="radio" name="spine" value="with-spine" data-parts="spine" class="d-none">
                                                 <span class="icon-circle mb-2"><img src="img/versions/full.webp" alt="Со спиной"></span>
                                                 <p class="mb-0 text-center">Со спиной</p>
-                                                <div class="option-price" data-price-placeholder></div>
+                                                <!--div class="option-price" data-price-placeholder></div-->
                                             </label>
                                         </div>
                                     </div>
@@ -144,26 +145,24 @@
 
                             <!-- Этап 2: Материал -->
                             <div class="config-step active" data-step="2">
-                                <h6 class="mb-3">2/4 Выберите материал:</h6>
+                                <h6 class="mb-3">2/5 Выберите материал: <span class="desc-link" onclick="scrollToDescription('desc-material')">[Что дает материал?]</span></h6>
                                 <div class="row">
-                                    <div class="col-md-6 mb-3" data-price-category="MATERIALS" data-price-key="ALUMINUM">
+                                    <div class="col-6 mb-3" data-price-category="MATERIALS" data-price-key="ALUMINUM" data-spine-context="BASE"> <!-- Добавлен data-spine-context -->
                                         <div class="option-wrapper position-relative">
-                                        
                                             <label class="config-option d-flex flex-column align-items-center p-3 rounded">
                                                 <input type="radio" name="material" value="aluminum" data-price="-" class="d-none">
-                                                <span class="icon-circle mb-2"><img src="img/versions/Al.webp" alt="Алюминий"></span>
+                                                <span class="icon-circle mb-2"><img src="img/versions/aisi.webp" alt="Нержавеющая сталь AISI 304"></span>
                                                 <p class="mb-0 text-center">Нержавеющая сталь</p>
-                                                <div class="price-note">Дешевый, но тяжелый</div>
+                                                <div class="price-note">Дешевая, но тяжелая</div>
                                                 <div class="option-price" data-price-placeholder></div>
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 mb-3" data-price-category="MATERIALS" data-price-key="TITANIUM">
+                                    <div class="col-6 mb-3" data-price-category="MATERIALS" data-price-key="TITANIUM" data-spine-context="BASE"> <!-- Добавлен data-spine-context -->
                                         <div class="option-wrapper position-relative">
-                                            
                                             <label class="config-option d-flex flex-column align-items-center p-3 rounded">
                                                 <input type="radio" name="material" value="titanium" data-price="-" class="d-none">
-                                                <span class="icon-circle mb-2"><img src="img/versions/Ti.webp" alt="Титан"></span>
+                                                <span class="icon-circle mb-2"><img src="img/versions/Ti.webp" alt="Титан ВТ-1"></span>
                                                 <p class="mb-0 text-center">Титан</p>
                                                 <div class="price-note">Более легкий, но дороже</div>
                                                 <div class="option-price" data-price-placeholder></div>
@@ -179,43 +178,16 @@
 
                             <!-- Этап 3: Дополнительные модули -->
                             <div class="config-step" data-step="3" id="modules-section" style="display: none;">
-                                <h6 class="mb-3">3/4 Выберите модуль (опционально):</h6>
+                                 <h6 class="mb-3">3/5 Выберите модули: <span class="desc-link" onclick="scrollToDescription('desc-modules')">[Что делают модули??]</span></h6>
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
                                         <div class="option-wrapper position-relative">
                                          
                                             <label class="config-option d-flex flex-column align-items-center p-3 rounded">
-                                                <!-- Изменено на checkbox -->
-                                                <input type="checkbox" name="module-group" value="none"  class="d-none module-checkbox">
+
+                                                <input type="radio" name="module-group" value="none"  class="d-none module-checkbox">
                                                 <span class="icon-circle mb-2">✖</span>
                                                 <p class="mb-0 text-center">Без модулей</p>
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4 mb-3" data-price-category="MODULES" data-price-key="THIRD_HAND">
-                                        <div class="option-wrapper position-relative">
-                                           
-                                            <label class="config-option d-flex flex-column align-items-center p-3 rounded">
-                                                <!-- Изменено на checkbox -->
-                                                <input type="checkbox" name="module-group" value="third-hand" class="d-none module-checkbox">
-                                                <span class="icon-circle mb-2"><img src="img/versions/3rd-hand.webp" alt="Третья рука"></span>
-                                                <p class="mb-0 text-center">Третья рука</p>
-                                                <div class="price-note">дополнительная поддержка инструментов</div>
-                                                <div class="option-price" data-price-placeholder></div>
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4 mb-3" data-price-category="MODULES" data-price-key="BACKPACK">
-                                        <div class="option-wrapper position-relative">
-                                          
-                                            <label class="config-option d-flex flex-column align-items-center p-3 rounded">          
-                                                <input type="checkbox" name="module-group" value="backpack" data-price="-" class="d-none module-checkbox">
-                                                <span class="icon-circle mb-2"><img src="img/versions/backpack.webp" alt="Упор для груза"></span>
-                                                <p class="mb-0 text-center">Упор для груза</p>
-                                                <div class="price-note">складная платформа на уровне пояса</div>
-                                                <div class="option-price" data-price-placeholder></div>
                                             </label>
                                         </div>
                                     </div>
@@ -224,7 +196,7 @@
                                         <div class="option-wrapper position-relative">
                                          
                                             <label class="config-option d-flex flex-column align-items-center p-3 rounded">                
-                                                <input type="checkbox" name="module-group" value="tackle" data-price="-" class="d-none module-checkbox">
+                                                <input type="radio" name="module-group" value="tackle" data-price="-" class="d-none module-checkbox">
                                                 <span class="icon-circle mb-2"><img src="img/versions/full.webp" alt="Такелаж"></span>
                                                 <p class="mb-0 text-center">Такелаж</p>
                                                 <div class="price-note">для разгрузки рук</div>
@@ -237,7 +209,7 @@
                                         <div class="option-wrapper position-relative">
                                             
                                             <label class="config-option d-flex flex-column align-items-center p-3 rounded">
-                                                <input type="checkbox" name="module-group" value="knee" data-price="-" class="d-none module-checkbox">
+                                                <input type="radio" name="module-group" value="knee" data-price="-" class="d-none module-checkbox">
                                                 <span class="icon-circle mb-2"><img src="img/versions/full.webp" alt="Наколенник"></span>
                                                 <p class="mb-0 text-center">Наколенник</p>
                                                 <div class="price-note">для защиты колен</div>
@@ -246,7 +218,43 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-md-4 mb-3" data-price-category="MODULES" data-price-key="THIRD_HAND">
+                                        <div class="option-wrapper position-relative">
+                                           
+                                            <label class="config-option d-flex flex-column align-items-center p-3 rounded">
+                                                <input type="radio" name="module-group" value="third-hand" class="d-none module-checkbox">
+                                                <span class="icon-circle mb-2"><img src="img/versions/3rd-hand.webp" alt="Третья рука"></span>
+                                                <p class="mb-0 text-center">Третья рука</p>
+                                                <div class="price-note">дополнительная поддержка инструментов</div>
+                                                <div class="option-price" data-price-placeholder></div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 mb-3" data-price-category="MODULES" data-price-key="BACKPACK">
+                                        <div class="option-wrapper position-relative">
+                                          
+                                            <label class="config-option d-flex flex-column align-items-center p-3 rounded">          
+                                                <input type="radio" name="module-group" value="backpack" data-price="-" class="d-none module-checkbox">
+                                                <span class="icon-circle mb-2"><img src="img/versions/backpack.webp" alt="Упор для груза"></span>
+                                                <p class="mb-0 text-center">Упор для груза</p>
+                                                <div class="price-note">складная платформа на уровне пояса</div>
+                                                <div class="option-price" data-price-placeholder></div>
+                                            </label>
+                                        </div>
+                                    </div>
+
                                     
+                                    <!-- <div class="col-md-4 mb-3" data-price-category="MODULES" data-price-key="MULTI_SELECT"> 
+                                        <div class="option-wrapper position-relative">
+                                            <label class="config-option d-flex flex-column align-items-center p-3 rounded">
+                                                <input type="checkbox" name="module-group" value="Несколько модулей" class="d-none module-checkbox"> 
+                                                <span class="icon-circle mb-2">🛒</span>
+                                                <p class="mb-0 text-center">Выбрать несколько</p>
+                                            </label>
+                                        </div>
+                                    </div> -->
+                            
                                 </div>
 
                                 <div class="config-buttons mt-3 d-flex justify-content-between">
@@ -255,36 +263,68 @@
                                 </div>
                             </div>
 
-                            <!-- Этап 4: Мягкие части -->
+                                                        <!-- Этап 4: Мягкие части и упоры (новая логика) -->
                             <div class="config-step" data-step="4">
-                                <h6 class="mb-3">4/4 Мягкие части:</h6>
-                                <div class="row">
-                                    <div class="col-md-6 mb-3" data-price-category="SOFT_PARTS" data-price-key="NO">
-                                        <div class="option-wrapper position-relative">
-                                           
-                                            <label class="config-option d-flex flex-column align-items-center p-3 rounded">
-                                                <input type="radio" name="soft-group" value="no" class="d-none">
-                                                <span class="icon-circle mb-2">✖</span>
-                                                <p class="mb-0 text-center">Жилет</p>
-                                                <div class="price-note">Стандартный плитник</div>
-                                                <div class="option-price" data-price-placeholder></div>
-                                            </label>
+                                <h6 class="mb-3">4/5 Выберите мягкую часть: <span class="desc-link" onclick="scrollToDescription('desc-soft-parts')">[Что это?]</span></h6>
+                                <!-- Варианты для базовой версии -->
+                                                                <!-- Варианты для базовой версии -->
+                                <div id="soft-parts-base-options" style="display: none;">
+                                    <div class="row">
+                                        <div class="col-6 mb-3" data-price-category="SOFT_PARTS" data-price-key="NO" data-spine-context="BASE"> <!-- Добавлен data-spine-context -->
+                                            <div class="option-wrapper position-relative">
+                                                <label class="config-option d-flex flex-column align-items-center p-3 rounded">
+                                                    <input type="radio" name="soft-group-base" value="no" class="d-none">
+                                                    <span class="icon-circle mb-2">✖</span>
+                                                    <p class="mb-0 text-center">Без жилета</p>
+                                                    <div class="price-note">только каркас + манжеты ног</div>
+                                                    <div class="option-price" data-price-placeholder></div>
+                                                </label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6 mb-3" data-price-category="SOFT_PARTS" data-price-key="YES">
-                                        <div class="option-wrapper position-relative">
-                                          
-                                            <label class="config-option d-flex flex-column align-items-center p-3 rounded">
-                                                <input type="radio" name="soft-group" value="yes" data-price="-" class="d-none">
-                                                <span class="icon-circle mb-2">✔</span>
-                                                <p class="mb-0 text-center">Капсула</p>
-                                                <div class="price-note">Прочная нейлоновая оболочка</div>
-                                                <div class="option-price" data-price-placeholder></div>
-                                            </label>
+                                        <div class="col-6 mb-3" data-price-category="SOFT_PARTS" data-price-key="WITH_SOFT" data-spine-context="BASE"> <!-- Добавлен data-spine-context -->
+                                            <div class="option-wrapper position-relative">
+                                                <label class="config-option d-flex flex-column align-items-center p-3 rounded">
+                                                    <input type="radio" name="soft-group-base" value="with_soft" data-price="-" class="d-none">
+                                                    <span class="icon-circle mb-2">✔</span>
+                                                    <p class="mb-0 text-center">Жилет и stkss упоры</p>
+                                                    <div class="price-note">стандартный плитник + упоры + манжеты ног</div>
+                                                    <div class="option-price" data-price-placeholder></div>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                
+                                <!-- Варианты для версии со спиной -->
+                                <div id="soft-parts-with-spine-options" style="display: none;">
+                                    <div class="row">
+                                        <div class="col-6 mb-3" data-price-category="SOFT_PARTS" data-price-key="NO" data-spine-context="WITH_SPINE"> <!-- Добавлен data-spine-context -->
+                                            <div class="option-wrapper position-relative">
+                                                <label class="config-option d-flex flex-column align-items-center p-3 rounded">
+                                                    <input type="radio" name="soft-group-with-spine" value="no" class="d-none">
+                                                    <span class="icon-circle mb-2">✖</span>
+                                                    <p class="mb-0 text-center">Без жилета</p>
+                                                    <div class="price-note">только манжеты ног</div>
+                                                    <div class="option-price" data-price-placeholder></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-3" data-price-category="SOFT_PARTS" data-price-key="VEST" data-spine-context="WITH_SPINE"> <!-- Добавлен data-spine-context -->
+                                            <div class="option-wrapper position-relative">
+                                                <label class="config-option d-flex flex-column align-items-center p-3 rounded">
+                                                    <input type="radio" name="soft-group-with-spine" value="vest" class="d-none">
+                                                    <span class="icon-circle mb-2">✖</span>
+                                                    <p class="mb-0 text-center">Жилет</p>
+                                                    <div class="price-note">стандартный плитник + манжеты ног</div>
+                                                    <div class="option-price" data-price-placeholder></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-3" data-price-category="SOFT_PARTS" data-price-key="YES" data-spine-context="WITH_SPINE"> <!-- Добавлен data-spine-context и изменил key на YES для CAPSULE -->
+                                             <!-- Или оставьте key="CAPSULE", но тогда измените в prices.js ключи на CAPSULE_WITH_SPINE -->
+                                             <!-- Пока оставим YES, чтобы не менять prices.js, но это не очень чисто. Лучше key="CAPSULE" -->
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="mt-4" id="waist-size-selector" style="display: none;">
                                     <h6 class="mb-3">Охват талии:</h6>
                                     <div class="d-flex align-items-center">
@@ -308,22 +348,22 @@
                             </div>
 
                             <div class="config-step" data-step="5" style="display: none;">
-                                <h6 class="mb-3">Выберите цвет мягких частей:</h6>
+                                <h6 class="mb-3">5/5 Выберите цвет мягких частей:</h6>
                                 <div class="row">
-                                    <div class="col-md-6 mb-3">
+                                    <div class="col-6 mb-3">
                                         <div class="option-wrapper position-relative">
                                             <label class="config-option d-flex flex-column align-items-center p-3 rounded">
                                                 <input type="radio" name="soft-color" value="black"  class="d-none">
-                                                <span class="icon-circle mb-2">⚫</span>
+                                                <span class="icon-circle mb-2"><img src="img/versions/black.webp" alt="Черный"></span>
                                                 <p class="mb-0 text-center">Черный</p>
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 mb-3">
+                                    <div class="col-6 mb-3">
                                         <div class="option-wrapper position-relative">
                                             <label class="config-option d-flex flex-column align-items-center p-3 rounded">
                                                 <input type="radio" name="soft-color" value="multicam" class="d-none">
-                                                <span class="icon-circle mb-2">🌿</span> 
+                                                <span class="icon-circle mb-2"><img src="img/versions/multicam.webp" alt="Мультикам"></span> 
                                                 <p class="mb-0 text-center">Мультикам</p>
                                             </label>
                                         </div>
@@ -331,7 +371,7 @@
                                 </div>
                                 <div class="config-buttons mt-3 d-flex justify-content-between">
                                     <button class="btn btn-outline-light prev-step">←Назад</button>
-                                    <button class="btn btn-outline-light next-step">Завершить→</button> <!-- Изменено -->
+                                    <button class="btn btn-outline-light next-step">Завершить→</button> 
                                 </div>
                             </div>
 
@@ -365,7 +405,6 @@
 
    
     
-
     <!-- About Us Section Begin -->
     <section class="counter-section spad">
         <div class="container">
@@ -380,15 +419,15 @@
                     <div class="bd-text">                              
                         <div class="bd-more-text">
                             <div class="row">
-                                <div class="col-lg-5">
+                                <div class="col-5">
                                     <div class="bm-item">
                                         <h4>Масса:</h4>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">  
+                                <div class="col-7">  
                                     <ul>
-                                        <li><p>ног (Al/Ti): 2.5/5 кг</p></li>
-                                        <li><p>спины (Al/Ti): 1/3 кг</p></li>
+                                        <li><p>ног (AiSi/Ti): 8/5 кг</p></li>
+                                        <li><p>спины (AiSi/Ti): 5/2.5 кг</p></li>
                                         <li><p>модуля "третья рука": 1 кг</p></li>
                                         <li><p>модуля "упор для груза": 0.6 кг</p></li>
                                     </ul>
@@ -396,16 +435,16 @@
                             </div>
                             <div class="tag-share"> </div>
                             <div class="row">
-                                <div class="col-lg-5">
+                                <div class="col-5">
                                     <div class="bm-item">
                                         <h4>Регулировка размеров:</h4>
                                         <h6>смотри фото</h6>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">  
+                                <div class="col-7">  
                                     <ul>
                                         <li><p>ширина спины: 315-377 мм </p></li>
-                                        <li><p>обхват талии: до 100 см </p></li>
+                                        <li><p>обхват талии: до 120 см </p></li>
                                         <li><p>длина спины: 421-473 мм</p></li>
                                         <li><p>длина бедра: 393-480 мм</p></li>
                                         <li><p>длина голени: 480-574 мм</p></li>
@@ -416,12 +455,12 @@
                             </div>
                             <div class="tag-share"> </div>
                             <div class="row">
-                                <div class="col-lg-5">
+                                <div class="col-5">
                                     <div class="bm-item">
                                         <h4>Допустимый вес:</h4>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">  
+                                <div class="col-7">  
                                     <ul>
                                         <li><p>до 50 кг</p></li>
                                     </ul>
@@ -453,79 +492,172 @@
 
 
 
-     <!-- Portfolio Section Begin -->
-    <section class="portfolio-section spad">
+
+
+
+
+    <!-- About Us Section Begin -->
+    <section class="counter-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="portfolio-item set-bg large-item" data-setbg="img/modelM/modelM-walk.webp" width="50%">
-                        <div class="pi-hover">
-                            <a href="img/modelM/modelM-walk.webp" class="search-icon image-popup"><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="as-text">
+                <div class="col-12">
+                    <div class="counter-text">
                         <div class="section-title">
-                            <h2>Для чего этот экзоскелет?</h2>
-                        </div>
-                        <p class="s-para">AUXILIUM Model M — ваш надежный помощник в работе и экстремальных условиях.
-                            Он снимает нагрузку с ног и спины, позволяя удерживать тяжести без риска травм.
-                            Модульная конструкция позволяет адаптировать его под любые задачи: от переноски грузов до эвакуации раненых.
-                            Каркас способен выдержать самые тяжелые условия. Подходит для строителей, военных, спасателей, курьеров и всех,
-                            кто работает на пределе возможностей.  </p>
-                        <div class="config-options">
-                            <div class="option-row">
-                                <label class="config-option">
-                                     Доставка
-                                </label>
-                                <label class="config-option">
-                                     Войска
-                                </label>
-                                <label class="config-option">
-                                     Путешествия
-                                </label>
-                            </div>
-                            <div class="option-row">
-                                <label class="config-option">
-                                     Стройка
-                                </label>
-                                <label class="config-option">
-                                     Логистика
-                                </label>
-                                <label class="config-option">
-                                     Медицина
-                                </label>
-                            </div>
-                            <div class="option-row">
-                                <label class="config-option">
-                                     МЧС
-                                </label>
-                                <label class="config-option">
-                                     Добыча
-                                </label>
-                                <label class="config-option">
-                                     Погрузки
-                                </label>
-                            </div>
-                            <div class="option-row">
-                                <label class="config-option">
-                                     Ремонты
-                                </label>
-                                <label class="config-option">
-                                    Производство
-                                </label>
-                                <label class="config-option">
-                                     Эвакуации
-                                </label>
-                            </div>
+                            <span>AUXILIUM MODEL M</span>
+                            <h2>Какую версию выбрать?</h2>
+                            <!-- Изображение сравнения (опционально, можно оставить или убрать) -->
+                            <p style="text-align:center"><img src="img/modelM/compare.webp" alt="Сравнение версий" class="desc-image"></p>
                         </div>
                     </div>
-                </div>
-            </div>
+
+                    <div class="bd-text">
+                        <div class="bd-more-text">
+                            <div id="desc-spine" class="bm-item config-desc-item">
+                                <!-- Подраздел: Версия "Без спины" -->
+                                <div class="spine-version-block">
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <h4>Версия "Без спины"</h4>
+                                            <p>Представляет собой каркасную конструкцию, предназначенную в первую очередь для <strong>разгрузки пояса и ног</strong>. Она идеально подходит для задач, где основная нагрузка приходится на нижнюю часть тела, и нет необходимости в распределении веса на плечи и спину.</p>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <img src="img/modelM/base.webp" alt="Версия без спины" class="desc-image">
+                                        </div>
+
+                                        <div class="col-md-8">
+                                            
+                                            <p><strong>Основные особенности:</strong></p>
+                                            <ul>
+                                                <li><p><strong>Целевое назначение:</strong> Основная функция — снижение нагрузки на поясничный отдел позвоночника и мышцы ног за счёт передачи веса на каркас экзоскелета и его распределения на точки опоры (бедра, голени).</p></li>
+                                                <li><p><strong>Совместимость с модулями:</strong> Эта версия <strong>совместима</strong> с такими модулями, как <strong>"Третья рука"</strong> и <strong>"Наколенник"</strong> Это позволяет эффективно использовать дополнительное оборудование, сохраняя при этом поддержку для ног и поясницы.</p></li>
+                                                <li><p><strong>Сценарий использования:</strong> К базовой версии можно присоединить жилет и STKSS упоры. В этом случае масса жилета и всех подсумков, размещенных на нём, разгружается <strong>напрямую через каркас в землю</strong>. Это позволяет использовать тяжёлый жилет (например, с установленными бронеплитами) с минимальной нагрузкой на пользователя — вес "сидит" на каркасе и упирается в землю, а не давит на тело.</p></li>
+                                            </ul>
+                                            <p><strong>Коротко:</strong> "Базовая" версия — это основа для разгрузки ног и поясницы, совместимая с рядом модулей, которая позволяет эффективно снимать нагрузку с пояса и передавая её на каркас и землю. (Рюкзаки не разгружает)</p>
+                                        </div>
+                                        
+                                    </div>
+                                </div> <!-- /spine-version-block -->
+
+                                <div class="tag-share"> </div>
+
+                                <!-- Подраздел: Версия "Со спиной" -->
+                                <div class="spine-version-block">
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <h4>Версия "Со спиной"</h4>
+                                            <p>Представляет собой расширенную конструкцию, предназначенную для <strong>максимальной разгрузки спины, плеч и поясницы</strong>, а также для <strong>оптимального распределения нагрузки по всему телу</strong>. Она идеально подходит для задач, где требуется переносить значительный вес на спине или когда необходима полная поддержка позвоночника.</p>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <img src="img/modelM/full.webp" alt="Версия со спиной" class="desc-image">
+                                        </div>
+
+                                        <div class="col-md-8">
+                                            
+                                            <p><strong>Основные особенности:</strong></p>
+                                            <ul>
+                                                <li><p><strong>Целевое назначение:</strong> Основная функция — снижение нагрузки на <strong>позвоночник, поясницу и плечи</strong> за счёт передачи веса груза (например, рюкзака) и собственного веса конструкции на каркас экзоскелета, а затем на точки опоры (бедра, голени).</p></li>
+                                                <li><p><strong>Совместимость с модулями:</strong> Эта версия <strong>совместима со всеми</strong> доступными модулями, включая <strong>"Третью руку"</strong>, <strong>"Упор для груза"</strong>, <strong>"Такелаж"</strong> и <strong>"Наколенник"</strong>. Это делает её универсальным решением для самых разных задач.</p></li>
+                                                <li><p><strong>Сценарий использования:</strong> Благодаря конструкции каркаса, <strong>вес рюкзака или другого снаряжения на спине</strong> воспринимается не телом пользователя, а самим экзоскелетом. Это позволяет брать на плечи больше веса, не испытывая привычной усталости и давления.</p></li>
+                                            </ul>
+                                            <p><strong>Коротко:</strong> "Версия со спиной" — это комплексное решение для максимальной поддержки тела и переноса тяжёлых грузов, совместимое со всеми модулями, обеспечивающее полную разгрузку спины и плеч. (В том числе перенос рюкзаков)</p>
+                                        </div>
+                                        
+                                    </div>
+                                </div> 
+                            </div> 
+
+                            <div class="tag-share"> </div>
+
+                            <!-- Описание материала -->
+                            <div id="desc-material" class="bm-item config-desc-item">
+                                <h4>Материал</h4>
+                                <p>Выбор материала конструкции влияет на два ключевых параметра: стоимость и вес. В конструкции каркаса используется 
+                                    оптимальная связка: менее нагруженные элементы (например, таз или спина) выполнены из лёгкого авиационного алюминия 
+                                    для снижения общего веса, а для более нагруженных узлов (например, ноги, сочленения) предлагается 
+                                    выбор между <strong>нержавеющей сталью</strong> и <strong>титаном.</strong></p>
+                                <ul>
+                                    <li><p><strong>Нержавеющая сталь</strong> Обеспечивает высокую прочность и устойчивость к механическим повреждениям, 
+                                    но имеет более низкую стоимость и больший вес.</p></li>
+                                    <li><p><strong>Титан:</strong> Обладает отличным соотношением прочности и веса, делая экзоскелет легче, при этом сохраняя надежность. Однако имеет повышенную стоимость.</p></li>
+                                </ul>   
+                            </div>
+
+                            <div class="tag-share"> </div>
+
+                            <!-- Описание модулей -->
+                            <div id="desc-modules" class="bm-item config-desc-item">
+                                <div class="row">
+
+                                    <div class="col-md-12"> 
+                                        <h4>Модули</h4>
+                                        <img src="img/modelM/modules.webp" alt="Примеры модулей" class="rounded mx-auto d-block" width="80%">
+                                        <p>Модули - это дополнительные функциональные детали, которые позволяют адаптировать экзоскелет <span>AUXILIUM MODEL M</span> под конкретные задачи.</p>
+                                    </div>
+                                
+                                    <div class="col-md-12">   
+                                        <ul>
+                                            <li>
+                                                <p><strong>"Третья рука":</strong> Является дополнительным модулем, который расширяет функциональность экзоскелета, обеспечивая внешнюю несущую руку для удержания инструментов или грузов до 7 кг. Модуль крепится к тазовой частии передаёт нагрузку напрямую 
+                                                на каркас экзоскелета, не нагружая пользователя. Идеален для работ на складе, в строительстве или при монтаже — освобождает ваши руки, снижает усталость. В случае крепления стрелкового оружия, позволяет принять упор лёжа.</p>
+                                                <img src="img/modelM/third_hand.webp" alt="упор для груза" class="rounded mx-auto d-block" width="30%">
+                                            </li>
+                                            <li>
+                                                <p><strong>"Наколенник":</strong> Защищает при работе в положении приседа или на коленях. Имеет совместимость со стандартными тактическими наколенниками скрытого ношения. Имеет регулировку угла наклона.</p>
+                                                <img src="img/modelM/knee.webp" alt="упор для груза" class="rounded mx-auto d-block" width="75%">
+                                            </li>
+                                            <li>
+                                                <p><strong>"Такелаж":</strong> Является дополнительным модулем для демпфирования и снятия нагрузки с рук. Разгружает руки, полностью забирая массу до 4 кг с рук. Идеален для длительных работ с болгаркой. </p>
+                                                <img src="img/modelM/tackle.webp" alt="упор для груза" class="rounded mx-auto d-block" width="30%">
+                                            </li>
+                                            <li>
+                                                <p><strong>"Упор для груза":</strong> Складная платформа на спине, позволяющая более устойчиво размещать переносимый груз. Может быть трансформирована в раскладную ступеньку для переноса людей.</p>
+                                                <img src="img/modelM/backpack.webp" alt="упор для груза" class="rounded mx-auto d-block" width="50%">
+                                            </li>
+                                        </ul>
+                                        <p>❔ Можно выбрать несколько модулей, <strong>написав об этом в комментариях к заказу,</strong> или  же оставить экзоскелет без модулей.</p>
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="tag-share"> </div>
+
+                            <!-- Описание мягких частей -->
+                            <div id="desc-soft-parts" class="bm-item config-desc-item">
+                                <h4>Мягкие части</h4>
+                                <p>Мягкие части являются связующим звеном между человеком и каркасом экзоскелета, обеспечивают комфорт и правильное распределение нагрузки на тело. По умолчанию устанавливается пояс и манжеты на ноги (с функцией быстросброса). В зависимости от выбранной версии экзоскелета на туловище устанавливается ряд возможных конфигураций</p>
+                                <p><strong>Для базовой версии:</strong></p>
+                                <ul>
+                                    <li>
+                                        <p><strong>"Без жилета":</strong> Минимальная конфигурация, только тактический пояс и манжеты ног</p> 
+                                    </li>
+                                    <li>
+                                        <p><strong>"Жилет и STKSS":</strong>Установка на пояс экзоскелета системы STKSS, к которой присоединяется разгрузочный жилет. В случае размещения в жилете бронепластин, их вес снимается с человека.</p> 
+                                    </li>
+                                </ul>
+                                    <p><strong>Для версии со спиной:</strong></p>
+                                <ul>
+                                    <li><p><strong>"Жилет":</strong> На каркас экзоскелета устанавливается  разгрузочный жилет. Полная подвижность, надёжная фиксация и полная разгрузка спины.</p></li>
+                                    <li><p><strong>"Капсула":</strong> Продвинутая система из полужесткого пластика, охватывающая грудную клетку, обеспечивающая максимальное распределение нагрузки, вентилируемость и комфорт.</p></li>
+                                </ul>
+                                
+                            </div>
+
+
+                        </div>
+                    </div> 
+                </div> 
+            </div> 
         </div>
     </section>
-    <!-- Portfolio Section End -->
+
+
+
+
+
 
 
     <!-- Counter Section Begin -->
@@ -563,12 +695,12 @@
                     </div>
                     <div class="counter-item">
                         <div class="ci-number count">
-                            4
+                            7
                         </div>
                         <div class="ci-text">
-                            <h4>Зоны</h4>
+                            <h4>Зон</h4>
                             <p>- В которых предусмотрена быстрая регулировка размеров:
-                                это ширина таза, длина бедра, длина голени и длина позвоночника</p>
+                                это ширина плеч, ширина грудной клетки, ширина таза, длина бедра, вылет бедра, длина голени и длина позвоночника</p>
                         </div>
                     </div>
                 </div>
@@ -610,7 +742,7 @@
     <section class="blog-details-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 m-auto">
+                <div class="col-lg-12 m-auto">
                     <div class="bd-text">
                         <div class="bd-more-text">
                             <div class="bm-item">
